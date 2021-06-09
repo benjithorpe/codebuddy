@@ -1,2 +1,2 @@
 # HTML Editor
-A cool, smart, responsive and reactive web based HTML editor
+A cool, smart, responsive and reactive web based HTML, CSS and JavaScript editor.

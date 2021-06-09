@@ -1,61 +1,50 @@
 <script>
-	let htmlOutput = `<!DOCTYPE html>
-<html lang='en'>
-<head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <title>Simple HTMl Editor</title>
+	import Output from './Output.svelte';
+	let htmlContent = "<h1>Hello World!</h1>";
+	let cssContent = "h1{ color: royalblue; }";
 
-  <style>
-    h1{ color: royalblue; }
-  </style>
-</head>
-
-<body>
-  <h1>Hello World!!</h1>
-</body>
-</html>`;
+	$: outputMessage = `<style>${cssContent}</style> ${htmlContent}`;
 </script>
 
 <main>
 	<section class="editor">
-		<textarea name="" id="" bind:value="{htmlOutput}"
-placeholder=""></textarea>
+		<section class="html">
+			<div class="tag">HTML</div>
+			<textarea name="" bind:value="{htmlContent}"></textarea>
+		</section>
+
+		<section class="css">
+			<div class="tag">CSS</div>
+			<textarea name="" bind:value="{cssContent}"></textarea>
+		</section>
 	</section>
 
-	<section class="output">
-		{@html htmlOutput}
-	</section>
+	<Output outputMessage={outputMessage} />
 </main>
 
 <style>
-	main {
-		display: flex;
-		text-align: center;
-		height: 100vh;
-	}
-
-	main section{
-		border: 1px solid rgba(0, 0, 0, 0.3);
-		flex-basis: 100%;
-		height: 100%;
-	}
-
-	section.output{
-		padding: 0.5em;
-		font-size: 1.6rem;
-	}
-
+	.editor > section{ position: relative; }
 	textarea{
-		outline-color: #999;
+    outline: 0;
 		border: none;
-		padding: 0.5em;
-		min-width: 200px;
-		min-height: 200px;
+		padding: 0.7em;
 		width: 100%;
 		height: 100%;
-		color: #444;
+		overflow: auto;
+		resize: none;
+		line-height: 1.4;
+		background-color: #f4f4f4;
 	}
 
-	@media (min-width: 768px) {}
+	div.tag{
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: .4em;
+		font-size: 1.4rem;
+		font-family: monospace;
+		background-color: rgba(0, 0, 0, 0.836);
+		color: white;
+		font-weight: bold;
+	}
 </style>
