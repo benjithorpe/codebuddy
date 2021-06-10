@@ -14,4 +14,4 @@ A cool, smart, responsive and reactive web based HTML, CSS and JavaScript editor
 * `cd html-editor`
 * `npm install`
 * `npm run dev`
-* open [localhost:5000](localhost:5000)
+* open [localhost:5000]()
