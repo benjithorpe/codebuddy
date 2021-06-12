@@ -1,5 +1,5 @@
 <script>
-  export let outputMessage = "";
+  export let outputMessage;
 </script>
 
 <section class="output">
@@ -13,5 +13,9 @@
 		text-align: left;
 		line-height: 1.4;
 		overflow-y: auto;
+	}
+
+	@media screen and (max-width: 768px){
+		section.output{ order: -1; }
 	}
 </style>
