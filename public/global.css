@@ -23,6 +23,13 @@ main > section{
 	outline: none;
 }
 
+.mode textarea{
+	background-color: orange;
+	font-size: 3rem;
+	color: blue;
+}
+
+
 @media screen and (max-width: 768px){
 	main{ flex-direction: column; }
 	.html{

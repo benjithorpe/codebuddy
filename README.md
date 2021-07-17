@@ -1,6 +1,6 @@
-# HTML Editor
+# Codebuddy (Web Editor)
 
-A cool, smart, responsive and reactive web based HTML, CSS and JavaScript editor.
+A cool, smart, responsive and reactive web editor.
 
 ### Requirements
 
@@ -10,8 +10,8 @@ A cool, smart, responsive and reactive web based HTML, CSS and JavaScript editor
 
 ### How to run
 
-* Clone the repo `git clone https://github.com/benjithorpe/html-editor.git`
-* `cd html-editor`
+* Clone the repo `git clone https://github.com/benjithorpe/codebuddy.git`
+* `cd codebuddy`
 * `npm install`
 * `npm run dev`
 * open [localhost:5000](https://localhost:5000)

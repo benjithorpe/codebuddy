@@ -1,13 +1,25 @@
 <script>
 	import Output from './Output.svelte';
+	import Navigation from './Navigation.svelte';
 	let htmlContent = "<h1>Hello World!</h1>";
 	let cssContent = "h1{ color: royalblue; }";
 
 	$: outputMessage = `<style>${cssContent}</style> ${htmlContent}`;
+	let mode = true;
+	const changeMode = (e) => {
+		if(e.detail){
+			console.log("Light Mode");
+			mode = e.detail;
+		}else{
+			console.log("Dark Mode");
+			mode = e.detail;
+		}
+	}
 </script>
 
+<Navigation on:changeMode={changeMode}/>
 <main>
-	<section class="editor">
+	<section class="editor mode" class:darkMode={mode}>
 		<section class="html">
 			<div class="tag">HTML</div>
 			<textarea name="" bind:value="{htmlContent}"></textarea>
@@ -24,6 +36,7 @@
 
 <style>
 	.editor > section{ position: relative; }
+	/* .editor textarea{ background-color: #f4f4f4; } */
 	textarea{
     outline: 0;
 		border: none;
@@ -34,6 +47,12 @@
 		resize: none;
 		line-height: 1.4;
 		background-color: #f4f4f4;
+	}
+
+	.mode textarea{
+		background-color: orange;
+		font-size: 3rem;
+		color: blue;
 	}
 
 	div.tag{
