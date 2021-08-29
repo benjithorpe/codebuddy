@@ -13,11 +13,11 @@ main {
 }
 
 main > section{
-	border-right: 2px solid rgba(0, 0, 0, 0.3);
-	flex-basis: 100%;
+	border-right: 1px solid #ccd;
+	/* flex-basis: 100%; */
 	height: 100%;
 }
-.html{ border-bottom: 2px solid rgba(0, 0, 0, 0.3); }
+.html{ border-bottom: 1px solid #ccd; }
 .html, .css{
 	height: 50%;
 	outline: none;

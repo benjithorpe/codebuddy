@@ -1,21 +1,29 @@
 <script>
+	import Header from './Header.svelte';
 	import Output from './Output.svelte';
 	let htmlContent = "<h1>Hello World!</h1>";
 	let cssContent = "h1{ color: royalblue; }";
 
-	$: outputMessage = `<style>${cssContent}</style> ${htmlContent}`;
+
+	$: outputMessage = `<style>
+											*{box-sizing: border-box}
+											ul, ol{list-style-position: inside;}
+												${cssContent}
+											</style>
+											${htmlContent}`;
 </script>
 
 <main>
+	<Header/>
 	<section class="editor">
 		<section class="html">
 			<div class="tag">HTML</div>
-			<textarea name="" bind:value="{htmlContent}"></textarea>
+			<textarea name="" bind:value={htmlContent}></textarea>
 		</section>
 
 		<section class="css">
 			<div class="tag">CSS</div>
-			<textarea name="" bind:value="{cssContent}"></textarea>
+			<textarea name="" bind:value={cssContent}></textarea>
 		</section>
 	</section>
 
@@ -23,6 +31,9 @@
 </main>
 
 <style>
+	.editor{
+		width: 40%;
+	}
 	.editor > section{ position: relative; }
 	textarea{
     outline: 0;
@@ -33,9 +44,8 @@
 		overflow: auto;
 		resize: none;
 		line-height: 1.4;
-		background-color: #f4f4f4;
+		background-color: #fcfcfc;
 	}
-
 	div.tag{
 		position: absolute;
 		top: 0;
