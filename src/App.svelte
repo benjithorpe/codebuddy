@@ -14,7 +14,6 @@
 </script>
 
 <main>
-	<Header/>
 	<section class="editor">
 		<section class="html">
 			<div class="tag">HTML</div>
