@@ -15,9 +15,9 @@
 		overflow-y: auto;
 		border: none;
 	}
-	@media screen and (max-width: 768px) {
+/* 	@media screen and (max-width: 768px) {
 		section {
 			order: -1;
 		}
-	}
+	} */
 </style>
