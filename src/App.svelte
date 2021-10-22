@@ -1,5 +1,4 @@
 <script>
-	import Header from './Header.svelte';
 	import Output from './Output.svelte';
 	let htmlContent = "<h1>Hello World!</h1>";
 	let cssContent = "h1{ color: royalblue; }";
