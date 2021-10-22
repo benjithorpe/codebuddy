@@ -49,6 +49,7 @@
 		top: 0;
 		right: 0;
 		padding: .4em;
+		opacity: 0.5;
 		font-size: 1.4rem;
 		font-family: monospace;
 		background-color: rgba(0, 0, 0, 0.836);
