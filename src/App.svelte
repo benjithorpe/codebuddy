@@ -1,59 +1,18 @@
 <script>
-	import Output from './Output.svelte';
-	let htmlContent = "<h1>Hello World!</h1>";
-	let cssContent = "h1{ color: royalblue; }";
-
-
-	$: outputMessage = `<style>
-											*{box-sizing: border-box}
-											ul, ol{list-style-position: inside;}
-												${cssContent}
-											</style>
-											${htmlContent}`;
+  import "./assets/app.css";
+  import { output } from "./lib/store.js";
+  import Editor from "./lib/Editor.svelte";
+  import Output from "./lib/Output.svelte";
 </script>
 
-<main>
-	<section class="editor">
-		<section class="html">
-			<div class="tag">HTML</div>
-			<textarea name="" bind:value={htmlContent}></textarea>
-		</section>
+<main class="grid h-screen grid-cols-2">
+  <!-- Input section -->
+  <section class="flex flex-col">
+    <Editor />
+  </section>
 
-		<section class="css">
-			<div class="tag">CSS</div>
-			<textarea name="" bind:value={cssContent}></textarea>
-		</section>
-	</section>
-
-	<Output outputMessage={outputMessage} />
+  <!-- Output section -->
+  <section>
+    <Output outputMessage={$output} />
+  </section>
 </main>
-
-<style>
-	.editor{
-		width: 40%;
-	}
-	.editor > section{ position: relative; }
-	textarea{
-    outline: 0;
-		border: none;
-		padding: 0.7em;
-		width: 100%;
-		height: 100%;
-		overflow: auto;
-		resize: none;
-		line-height: 1.4;
-		background-color: #fcfcfc;
-	}
-	div.tag{
-		position: absolute;
-		top: 0;
-		right: 0;
-		padding: .4em;
-		opacity: 0.5;
-		font-size: 1.4rem;
-		font-family: monospace;
-		background-color: rgba(0, 0, 0, 0.836);
-		color: white;
-		font-weight: bold;
-	}
-</style>
